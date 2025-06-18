@@ -10,7 +10,10 @@ app.use(cors());
 app.use(express.json());
 
 // Connect to MongoDB
+import { connectDB } from './db.js';
+
 connectDB();
+
 
 // Basic route
 app.get("/", (req, res) => {
