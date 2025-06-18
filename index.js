@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import connectDB from "./db.js";
+import { connectDB } from "./db.js"; // ✅ Keep only this
 import firebaseApp from "./firebase.js";
 
 dotenv.config();
@@ -10,10 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 // Connect to MongoDB
-import { connectDB } from './db.js';
-
 connectDB();
-
 
 // Basic route
 app.get("/", (req, res) => {
